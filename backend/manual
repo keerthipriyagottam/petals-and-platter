@@ -1,0 +1,12 @@
+dependencies:
+mangoose
+express
+dotenv
+body-parser
+nodemon
+
+connection to database ----mongoDb
+1.Get a MongoDb URI using your account and store in .env file (secret key)
+2.Use Mongoose to build the connection with database
+3.fetch using config 
+4.promise to show the connection
