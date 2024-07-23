@@ -59,4 +59,30 @@ const sellerLogin=async(req,res)=>{
     }
 }
 
-module.exports = { sellerRegister ,sellerLogin};
+const getAllSellers=async(req,res)=>{
+    try {
+        const sellers=await Seller.find().populate('company')
+        res.json({sellers})
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+}
+
+const getSellersById=async(req,res)=>{
+    const sellerID= req.params.id;
+    console.log(sellerID);
+    try {
+        const sellerById=await Seller.findById(sellerID);
+        if(!sellerById){
+            res.status(400).json({message:"seller not found by id"})
+        }
+        res.status(200).json({sellerById});
+        
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+}
+
+module.exports = { sellerRegister ,sellerLogin,getAllSellers,getSellersById};

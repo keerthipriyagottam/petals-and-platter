@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const sellerRoutes = require('./routes/sellerRoutes');
+const companyRoutes=require('./routes/companyRoutes')
 
 dotenv.config();
 
@@ -15,6 +16,8 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 app.use(express.json()); // Parse JSON bodies automatically
 
 app.use('/Seller', sellerRoutes);
+app.use('/Company',companyRoutes);
+
 
 app.listen(port, () => {
     console.log(`Server running at port ${port}`);

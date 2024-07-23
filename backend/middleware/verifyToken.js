@@ -24,7 +24,7 @@ const verifyToken= async(req,res,next)=>{
     }
     
     catch (error) {
-        console.error(err);
+        console.error(error);
         return res.status(500).json({Message:"Token not Found"})
     }
 }

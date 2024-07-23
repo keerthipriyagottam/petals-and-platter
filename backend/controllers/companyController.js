@@ -14,6 +14,8 @@ const storage = multer.diskStorage({
     }
 });
 
+const upload=multer({storage:storage});
+
 const addCompany=async(req,res)=>{
     try {
         
@@ -31,11 +33,14 @@ const addCompany=async(req,res)=>{
             companyName,companyAddress,category,FilterByStore,Deals,Image,seller:seller._id
         })
     
-        await Company.save();
+        const saveCompany=await Company.save();
+
+        seller.company.push(saveCompany);
+        await seller.save();
         res.status(202).json({message:"Company Added Successfully..."})
 
     } catch (error) {
-        console.error(err);
+        console.error(error);
         res.status(500).json({ error: "Internal server error" });
     }
 }
