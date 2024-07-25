@@ -46,4 +46,19 @@ const addCompany=async(req,res)=>{
 }
 
 
-module.exports={addCompany:[upload.single('Image'),addCompany]}
+const deleteCompany=async (req,res)=>{
+    try {
+        const companyId=req.params.companyId;
+        const deletedcompany= await Product.findByIdAndDelete(companyId);
+        if(!deletedcompany){
+            res.status(404).json({message:"comapny Not found"})
+        }
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+}
+
+
+module.exports={addCompany:[upload.single('Image'),addCompany],deleteCompany}

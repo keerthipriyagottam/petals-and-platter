@@ -2,7 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const sellerRoutes = require('./routes/sellerRoutes');
-const companyRoutes=require('./routes/companyRoutes')
+const companyRoutes=require('./routes/companyRoutes');
+const productRoutes=require('./routes/productRoutes');
+const path=require('path');
 
 dotenv.config();
 
@@ -17,6 +19,8 @@ app.use(express.json()); // Parse JSON bodies automatically
 
 app.use('/Seller', sellerRoutes);
 app.use('/Company',companyRoutes);
+app.use('/Product',productRoutes);
+app.use('/uploads',express.static('uploads'))
 
 
 app.listen(port, () => {

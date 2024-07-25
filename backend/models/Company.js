@@ -13,7 +13,7 @@ const companySchema=new mongoose.Schema({
         type:[
             {
                 type:String,
-                enum:['Flowers','Fruits','Chocolates','Bakery','Sweets','Vegetables','Dairy','Meat','HairCare','SkinCare','FaceCare','PetSupplies','Perfumes','KitchenWare','Bedding','BoardGames','cameras','pendrives','Smartphones','Stationary','Magazines','OfficeSupplies','']
+                enum:['Flowers','Fruits','Vegetables','Milk','Eggs','cheese']
             }
         ],
     },
@@ -21,7 +21,7 @@ const companySchema=new mongoose.Schema({
         type:[
             {
                 type:String,
-                enum:['Grocery Store','Beauty Store','Departmental Store','Pooja Store','Pet Store','Home Store','Clothing Store','Electronics Store','Book Store','Furniture Store','Toy Store']
+                enum:['Grocery Store','Flower Store','Dairy Store']
             }
         ],
     },
@@ -35,6 +35,12 @@ const companySchema=new mongoose.Schema({
         {
             type:mongoose.Schema.Types.ObjectId,
             ref:'Seller'
+        }
+    ],
+    products:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Product'
         }
     ]
     
