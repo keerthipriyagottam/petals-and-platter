@@ -28,6 +28,6 @@ app.listen(port, () => {
 });
 
 // Example route
-app.get('/Home', (req, res) => {
+app.get('/', (req, res) => {
     res.send("<h1>Welcome to the Home page</h1>");
 });
