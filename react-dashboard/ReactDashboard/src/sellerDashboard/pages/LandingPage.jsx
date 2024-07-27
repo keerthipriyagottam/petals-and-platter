@@ -44,9 +44,9 @@ const LandingPage = () => {
         <NavBar loginHandler={loginHandler} registerHandler={registerHandler}/>
         {loginPage &&<Login registerHandler={registerHandler}/>}
         {registerPage && <Register/>}
-        <SideBar showCompanyHandler={showCompanyHandler} showProductHandler={showProductHandler}/>
+        {/* <SideBar showCompanyHandler={showCompanyHandler} showProductHandler={showProductHandler}/>
         {company && <AddCompany/>}
-        {product && <AddProduct/>}
+        {product && <AddProduct/>} */}
         
         
         

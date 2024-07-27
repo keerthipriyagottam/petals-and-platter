@@ -5,11 +5,17 @@ const sellerRoutes = require('./routes/sellerRoutes');
 const companyRoutes=require('./routes/companyRoutes');
 const productRoutes=require('./routes/productRoutes');
 const path=require('path');
+const cors=require('cors')
 
-dotenv.config();
+
+
 
 const app = express();
 const port = process.env.PORT || 4000;
+
+dotenv.config();
+app.use(cors());
+
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("MongoDB connection successful"))
