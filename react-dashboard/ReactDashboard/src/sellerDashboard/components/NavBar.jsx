@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NavBar = () => {
+const NavBar = ({loginHandler,registerHandler}) => {
   return (
     <div className="navsection">
         <div className="company">
@@ -8,8 +8,8 @@ const NavBar = () => {
                 style={{width: '50px'}} alt="logo" /></span> Seller DashBoard
         </div>
         <div className="userAuth">
-            <span>Login: /</span>
-            <span>Register </span>
+            <span onClick={loginHandler}>Login: /</span>
+            <span onClick={registerHandler}>Register </span>
         </div>
     </div>
 

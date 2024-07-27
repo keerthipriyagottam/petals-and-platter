@@ -8,7 +8,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-function Register() {
+function Register({}) {
   return (
     <MDBContainer className="my-5 gradient-form">
       <MDBContainer className="my-5 gradient-form" style={{width: '50%'}}>

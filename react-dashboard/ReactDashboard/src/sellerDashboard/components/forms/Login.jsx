@@ -8,7 +8,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-function Login() {
+function Login({registerHandler}) {
   return (
     <MDBContainer className="my-5 gradient-form">
       <MDBContainer className="my-5 gradient-form" style={{width: '50%',height:'100vh'}}>
@@ -37,7 +37,7 @@ function Login() {
 
             <div className="d-flex flex-row align-items-center justify-content-center pb-4 mb-4">
               <p className="mb-0">Don't have an account?</p>
-              <MDBBtn outline className='mx-2' color='danger'>
+              <MDBBtn outline className='mx-2' color='danger' onClick={registerHandler}>
                 Register
               </MDBBtn>
             </div>
