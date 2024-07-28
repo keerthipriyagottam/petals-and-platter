@@ -103,10 +103,10 @@ const AddCompany = () => {
         <Form style={{margin:"30px 0"}}  onSubmit={handleCompanySubmit}>
           <Row >
             <Col>
-            <Form.Control Label="Company:" placeholder="Company Name" name='companyName' value={companyName} onChange={(e)=>setCompanyName(e.target.value)}/>
+            <Form.Control label="Company:" placeholder="Company Name" name='companyName' value={companyName} onChange={(e)=>setCompanyName(e.target.value)}/>
             </Col>
             <Col>
-            <Form.Control Label="Address:" placeholder="Company Address" name='companyAddress'  value={companyAddress} onChange={(e)=>setCompanyAddress(e.target.value)}/>
+            <Form.Control label="Address:" placeholder="Company Address" name='companyAddress'  value={companyAddress} onChange={(e)=>setCompanyAddress(e.target.value)}/>
             </Col>
         </Row>
         <br/>
