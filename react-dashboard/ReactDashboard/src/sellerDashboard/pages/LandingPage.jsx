@@ -6,15 +6,25 @@ import Login from '../components/forms/Login'
 import AddCompany from '../components/forms/AddCompany'
 import AddProduct from '../components/forms/AddProduct'
 import { useState } from 'react'
+import Home from '../components/Home'
 
 const LandingPage = () => {
-  const[loginPage,setLoginpage]=useState(false);
+  const[loginPage,setLoginpage]=useState(true);
   const[registerPage,setRegisterpage]=useState(false);
+  const[homePage,setHomePage]=useState(false);
   const[company,setCompany]=useState(false);
   const[product,setProduct]=useState(false);
 
   const loginHandler=()=>{
     setLoginpage(true);
+    setRegisterpage(false);
+    setCompany(false);
+    setProduct(false);
+    setHomePage(false);
+  }
+  const showHomeHandler=()=>{
+    setHomePage(true);
+    setLoginpage(false);
     setRegisterpage(false);
     setCompany(false);
     setProduct(false);
@@ -24,33 +34,32 @@ const LandingPage = () => {
     setLoginpage(false);
     setCompany(false);
     setProduct(false);
+    setHomePage(false);
   }
   const showCompanyHandler=()=>{
     setCompany(true);
     setRegisterpage(false);
     setLoginpage(false);
     setProduct(false);
+    setHomePage(false);
   }
   const showProductHandler=()=>{
     setCompany(false);
     setRegisterpage(false);
     setLoginpage(false);
+    setHomePage(false);
     setProduct(true);
   }
 
   return (
     <>
     <section className='landing-section'>
-        <NavBar loginHandler={loginHandler} registerHandler={registerHandler}/>
-        {loginPage &&<Login registerHandler={registerHandler}/>}
+        <NavBar/>
+        {loginPage && <Login registerHandler={registerHandler} showHomeHandler={showHomeHandler}/>}
         {registerPage && <Register/>}
-        {/* <SideBar showCompanyHandler={showCompanyHandler} showProductHandler={showProductHandler}/>
+        {homePage && <Home showCompanyHandler={showCompanyHandler} showProductHandler={showProductHandler}/>}
         {company && <AddCompany/>}
-        {product && <AddProduct/>} */}
-        
-        
-        
-       
+        {product && <AddProduct/>} 
     </section>
     </>
   )

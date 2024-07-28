@@ -18,15 +18,13 @@ const[password,setPassword]=useState("");
 const[error,setError]=useState("")
 const[loading,setLoading]=useState(true);//till the promise is fullfilled
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 
 const handleSubmit = async(e)=>{
-  delay(3000)
-  console.log("reached inside handleSubmit")
+
   e.preventDefault();
   try {
-    console.log("123")
+    
     const Response= await fetch(`${API_URL}/Seller/Register`,{
         method:'POST',
         headers:{

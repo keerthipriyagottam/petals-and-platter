@@ -13,7 +13,7 @@ const companySchema=new mongoose.Schema({
         type:[
             {
                 type:String,
-                enum:['Flowers','Fruits','Vegetables','Milk','Eggs','cheese']
+                enum:['FlowerStore','GroceryStore','DairyStore']
             }
         ],
     },
@@ -21,7 +21,7 @@ const companySchema=new mongoose.Schema({
         type:[
             {
                 type:String,
-                enum:['Grocery Store','Flower Store','Dairy Store']
+                enum:['Fruits','Vegetables','Milk','Eggs','cheese','Flowers','Plants']
             }
         ],
     },

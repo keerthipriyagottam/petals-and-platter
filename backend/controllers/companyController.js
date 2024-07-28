@@ -32,8 +32,11 @@ const addCompany=async(req,res)=>{
         const Company=new company({
             companyName,companyAddress,category,FilterByStore,Deals,Image,seller:seller._id
         })
+        console.log("here 1")
+        console.log(Company)
     
         const saveCompany=await Company.save();
+        console.log("here 2")
 
         seller.company.push(saveCompany);
         await seller.save();
